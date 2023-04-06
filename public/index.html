@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web site created using create-snowpack-app" />
-    <link rel="stylesheet" type="text/css" href="/index.css" />
-    <title>Snowpack App</title>
-  </head>
-  <body>
-    <img id="img" src="/logo.svg" />
-    <canvas id="canvas"></canvas>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+<head>
+    <meta charset="UTF-7">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="/calculator.ico" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="/dist/index.js"></script>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+</head>
+<body style="background-image: linear-gradient(to left, #bc70a4, #bfd741);">
+    <main>
+        <div class="grid justify-items-center" style="margin: 9%">
+            <section id="inputValors">
+                <div class="w-full max-w-sm">
+                    <div class="border-b-2 border-teal-500 w-80 py-2">
+                        <p class="bg-transparent w-full text-black-700 py-2 px-2 leading-tight text-xl" id="displayOperation"></p>
+                    </div>
+                    <div class="border-2 border-teal-500 w-80 py-2">
+                      <p class="bg-transparent w-full text-black-700 py-2 px-2 leading-tight text-xl" id="display">0</p>
+                    </div>
+                </div>
+            </section>
+            <section id="keyword" class="border-2">
+                <div class="grid grid-flow-col justify-stretch border-b-2 border-white-500">
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>7</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>8</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>9</button>
+                    <button type="button" class="p-6 text-3xl ring-yellow-300 hover:ring-2" data-operation>+</button>
+                </div>
+                <div class="grid grid-flow-col justify-stretch border-b-2 border-white-500">
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>4</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>5</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>6</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-operation>-</button>
+                </div>
+                <div class="grid grid-flow-col justify-stretch border-b-2 border-white-500">
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>1</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>2</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>3</button>
+                    <button type="button" class="p-6 text-3xl ring-yellow-300 hover:ring-2" data-operation>*</button>
+                </div>
+                <div class="grid grid-flow-col justify-stretch border-b-2 border-white-500">
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-operation>C</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-number>0</button>
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-operation>.</button>
+                    <button type="button" class="p-7 text-3xl ring-yellow-300 hover:ring-2" data-operation>/</button>
+                </div>
+                <div class="grid grid-flow-col justify-stretch">
+                    <button type="button" class="p-7 text-4xl ring-yellow-300 hover:ring-2" data-operation>E</button>
+                    <button type="button" class="p-7 text-5xl ring-yellow-300 hover:ring-2" data-operation>=</button>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
 </html>

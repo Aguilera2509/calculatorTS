@@ -27,7 +27,7 @@ $keys.forEach(el => {
 
 $operation.forEach(el => {
     el.addEventListener("click", e => {
-        if(el.textContent === "=" && $display!.textContent!.length >= 3){
+        if(el.textContent === "="){
             $displayOperation!.textContent = `${calculator.previousOperand}  ${calculator.case}  ${calculator.currentOperand}`; 
             let result = calculator.Computing();
             return $display!.textContent = String(result);

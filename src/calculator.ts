@@ -31,6 +31,15 @@ export class calculate{
         };
         if(isNaN(parseFloat(this.previousOperand)) || isNaN(parseFloat(this.currentOperand))) return 0;
 
+        if(parseFloat(this.previousOperand) === 0  && parseFloat(this.currentOperand) === 0 && this.case === "/"){
+            this.currentOperand = String(this.result);
+            this.case = "";
+            this.previousOperand = "";
+            this.newValues = false;
+    
+            return this.result;
+        }
+
         switch (this.case) {
             case "+":
                 this.result = parseFloat(this.previousOperand) + parseFloat(this.currentOperand);
@@ -52,6 +61,8 @@ export class calculate{
         this.case = "";
         this.previousOperand = "";
         this.newValues = false;
+        
+        if(this.result === Infinity) return 0;
 
         return this.result;
     };

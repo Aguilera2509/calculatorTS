@@ -29,6 +29,16 @@ export class calculate{
             this.Clear();
             return 0; 
         };
+        
+        if(this.case !== "" && this.currentOperand === ""){
+            this.currentOperand = String(this.result);
+            this.case = "";
+            this.previousOperand = "";
+            this.newValues = false;
+    
+            return this.result;
+        };
+
         if(isNaN(parseFloat(this.previousOperand)) || isNaN(parseFloat(this.currentOperand))) return 0;
 
         if(parseFloat(this.previousOperand) === 0  && parseFloat(this.currentOperand) === 0 && this.case === "/"){
@@ -39,6 +49,7 @@ export class calculate{
     
             return this.result;
         }
+
 
         switch (this.case) {
             case "+":
